@@ -35,6 +35,9 @@ public class LandingPage extends AbstractComponent {
 		@FindBy(id="login")
 		WebElement submit;
 		
+		@FindBy(css="[class*='flyInOut']")
+		WebElement errorMessage;
+		
 		public productCatlog loginApplication(String user,String password) {
 			userEmailElem.sendKeys(user);
 			passwordElem.sendKeys(password);
@@ -50,7 +53,11 @@ public class LandingPage extends AbstractComponent {
 		
 		}
 		
-		
+		public String goToErrorValidation() throws InterruptedException
+		{
+			Thread.sleep(1000);
+			return errorMessage.getText();
+		}
 		
 	
 

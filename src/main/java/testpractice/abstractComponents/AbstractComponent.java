@@ -31,10 +31,10 @@ public class AbstractComponent {
 	
 	
 	
-	public void waitForElementToAppear(By findby)
+	public void waitForElementToAppear(By FindBy)
 	{
 		WebDriverWait wait= new WebDriverWait(driver,Duration.ofSeconds(5));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(findby));
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(FindBy));
 	}
 		
 //	public void waitForElementToDisappear(WebElement spinner) 

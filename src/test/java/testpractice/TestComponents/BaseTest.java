@@ -50,7 +50,7 @@ public class BaseTest {
 	@BeforeMethod
 	public LandingPage launchApplication() throws IOException {
 		driver =initializeDriver();
-		LandingPage landingpage = new LandingPage(driver);
+		landingpage = new LandingPage(driver);
 		landingpage.goTO();
 		return landingpage;
 	}
