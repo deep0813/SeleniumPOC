@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import testpractice.pageobject.CartPage;
+import testpractice.pageobject.OrderPage;
 
 public class AbstractComponent {
 
@@ -50,14 +51,14 @@ public class AbstractComponent {
 		return cartPage;
 	}
 	
-//	public OrderPage goToOrderPage() {
-//		orderHeader.click();
-//		OrderPage orderPage= new OrderPage(driver);
-//		return orderPage;
-//		
-//		
-//		
-//	}
+	public OrderPage goToOrderPage() {
+		orderHeader.click();
+		OrderPage orderPage= new OrderPage(driver);
+		return orderPage;
+		
+		
+		
+	}
 
 }
 

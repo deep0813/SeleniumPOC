@@ -12,6 +12,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import testpractice.pageobject.LandingPage;
 
@@ -41,7 +42,7 @@ public class StandAloneTest {
 		driver.findElement(By.xpath("//button[@routerlink='/dashboard/cart']")).click();
 		List <WebElement> carts =	driver.findElements(By.xpath("//div[@class='infoWrap']//h3"));
 		Boolean match = carts.stream().anyMatch(cart -> cart.getText().equalsIgnoreCase(productName));
-//		Assert.asserttrue(match);
+		Assert.assertTrue(match);
 		driver.findElement(By.xpath("//button[.='Checkout']")).click();
 		Actions ac= new Actions(driver);
 		ac.sendKeys(driver.findElement(By.xpath("//input[@placeholder='Select Country']")),"India").build().perform();
@@ -53,9 +54,6 @@ public class StandAloneTest {
 		Thread.sleep(5000);
 		driver.findElement(By.cssSelector(".action__submit")).click();
 		System.out.println(driver.findElement(By.cssSelector(".hero-primary")).getText());
-		
-		
-		
 		driver.close();
 		
 	}
