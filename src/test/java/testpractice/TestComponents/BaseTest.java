@@ -1,4 +1,4 @@
-package testpractice.TestComponents;
+  package testpractice.TestComponents;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -51,7 +51,7 @@ public class BaseTest {
 		return driver;
 	}
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun=true)
 	public LandingPage launchApplication() throws IOException {
 		driver =initializeDriver();
 		landingpage = new LandingPage(driver);
@@ -64,7 +64,7 @@ public class BaseTest {
 	}
 	
 
-	public String getScreenshot(String testCasename) throws IOException {
+	public String getScreenshot(String testCasename, WebDriver driver) throws IOException {
 		TakesScreenshot ts= (TakesScreenshot)driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
 		File file= new File(System.getProperty("user.dir")+ "//reports//" + testCasename +".png");

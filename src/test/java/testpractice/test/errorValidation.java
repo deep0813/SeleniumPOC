@@ -21,7 +21,7 @@ public class errorValidation extends BaseTest{
 
 	
 	
-	@Test(groups= {"ErrorHandling"})
+	@Test(groups= {"ErrorHandling"},retryAnalyzer = testpractice.TestComponents.Retry.class)
 	public  void submitOrder() throws InterruptedException {
 		// TODO Auto-generated method stub
 		
@@ -33,7 +33,7 @@ public class errorValidation extends BaseTest{
 
 	}
 
-	@Test
+	@Test(groups= {"productValidation"})
 	public void productValidation() throws InterruptedException {
 		
 		String productName = "ZARA COAT 3";

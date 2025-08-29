@@ -32,9 +32,9 @@ import testpractice.pageobject.productCatlog;
 
 public class submitOrderTest extends BaseTest {
 
-	 
+//	retryAnalyzer = testpractice.TestComponents.Retry.class
 	@Test(dataProvider="getData", groups="purchase")
-	public  void submitOrder(HashMap <String, String> input ) throws IOException, InterruptedException  {
+	public  void submitOrder(HashMap<String,String> input ) throws IOException, InterruptedException  {
 //		String productName = "ZARA COAT 3";
 
 		productCatlog productCatlog= landingpage.loginApplication(input.get("email"),input.get("password"));
@@ -53,10 +53,11 @@ public class submitOrderTest extends BaseTest {
 		String confirmationMessage= confirmationPage.verifyConfirmation();
 		AssertJUnit.assertTrue(confirmationMessage.equalsIgnoreCase("Thankyou for the order."));
 		System.out.println(confirmationMessage);
-		
+
+	}		
 //	public void product catalogtest
-	
-	}
+//	
+//	}
 //		@Test(dependsOnMethods={"SubmitOrder"})
 //		public void OrderHistoryTest() {
 //			productCatlog productCatlog= landingpage.loginApplication("prakherdeep10@gmail.com", "Prakher@123");
@@ -64,27 +65,32 @@ public class submitOrderTest extends BaseTest {
 //			Assert.assertTrue(orderPage);
 //		}
 //		
-		@DataProvider
-		public Object[][] getData() {
-			HashMap < String, String> map = new HashMap<String,String>();
-			map.put("email", "prakherdeep10@gmail.com");
-			map.put("password","Prakher@123");
-			map.put("productname","ZARA COAT 3");
-			
-			HashMap < String, String> map1 = new HashMap<String,String>();
-			map1.put("email", "anshika@gmail.com");
-			map1.put("password","Iamking@000");
-			map1.put("productname","ADIDAS ORIGINAL");
-			
-			
-			return new Object[][] {{map},{map1}};
-		
-	}
 		
 		// this will only be run when the test will be fail
 	
 		
+//	@DataProvider	
+//	public Object[][] getData() 
+//	{
+//		return new Object[][] {{"prakherdeep10@gmail.com", "Prakher@123", "ZARA COAT 3"}, {"anshika@gmail.com", "Iamking@000", "ADIDAS ORIGINAL"},{"prakherdeep10@gmail.com", "Prakher@123", "ADIDAS ORIGINAL"}};
+//	}
+//		
+	
+	
+	@DataProvider 
+	public Object[][] getData() {
+		 
+		HashMap <String, String> map = new HashMap<String, String>();
+		map.put("email", "prakherdeep10@gmail.com");
+		map.put("password", "Prakher@123");
+		map.put("productname", "ZARA COAT 3");
 		
+		HashMap <String, String> map1 = new HashMap<String, String>();
+		map1.put("email", "anshika@gmail.com");
+		map1.put("password", "Iamking@000");
+		map1.put("productname", "ADIDAS ORIGINAL");
 		
-		
-}
+		return new Object[][] {{map},{map1}};
+	}
+}	
+

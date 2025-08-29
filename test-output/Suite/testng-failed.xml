@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="purchase(failed)">
+  <test thread-count="5" name="submit Order Test(failed)">
+    <groups>
+      <run>
+        <include name="purchase"/>
+      </run>
+    </groups>
     <classes>
       <class name="testpractice.test.submitOrderTest">
         <methods>
-          <include name="submitOrder" invocation-numbers="1"/>
+          <include name="submitOrder" invocation-numbers="0 1"/>
           <include name="launchApplication"/>
-          <include name="teaddown"/>
         </methods>
       </class> <!-- testpractice.test.submitOrderTest -->
     </classes>
-  </test> <!-- purchase(failed) -->
+  </test> <!-- submit Order Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

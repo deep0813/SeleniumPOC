@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Suite">
+<groups>
+	<run >
+
+	<include name="productValidation"></include>
+	</run>
+</groups>
+<listeners>
+<listener class-name="testpractice.TestComponents.Listeners"></listener>
+</listeners>
+  <test thread-count="5" name="purchase">
+    <classes>
+      <class name="testpractice.test.submitOrderTest"/>
+    </classes>
+  </test> <!-- purchase -->
+  <test thread-count="5" name="errorValidation">
+  <classes>
+  <class name="testpractice.test.errorValidation"></class>
+  </classes>
+  </test>
+  
+</suite> <!-- Suite -->
